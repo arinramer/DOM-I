@@ -39,7 +39,7 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', 'https://www.travelportland.com/wp-content/uploads/2013/08/Latourell-Falls_Michael-Matti-via-Flickr.jpg')
+logo.setAttribute('src', siteContent['nav']['img-src']);
 
 const links = document.querySelectorAll('a');
 links[0].textContent = siteContent.nav['nav-item-1'];
@@ -56,10 +56,10 @@ links[5].textContent = siteContent.nav['nav-item-6'];
 links[5].style.color = 'green';
 
 let header = document.getElementById("cta-img");
-header.setAttribute('src', 'https://fpdcc.com/wp-content/uploads/2019/01/cap-sauers-chad-reno-jun18.jpg')
+header.setAttribute('src', siteContent['cta']['img-src']);
 
 let middle = document.getElementById("middle-img");
-middle.setAttribute('src', 'https://media.graytvinc.com/images/810*455/NATURE+GENERIC+TREES.jpg')
+middle.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
 const h1 = document.querySelector('h1');
 h1.textContent = siteContent.cta.h1;
@@ -105,12 +105,14 @@ p[6].textContent = phone;
 p[7].textContent = email;
 p[8].textContent = footer;
 
-const node = document.createElement("P");
-const textnode = document.createTextNode("This is a paragraph");
+const node = document.createElement("a");
+const textnode = document.createTextNode("This is a link");
 node.appendChild(textnode);
 document.querySelector('nav').appendChild(node);
+node.style.color = 'green';
 
 const node2 = document.createElement("a");
 const textnode2 = document.createTextNode("This is a link");
 node2.prepend(textnode2);
 document.querySelector('nav').prepend(node2);
+node2.style.color = 'green';
